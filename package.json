@@ -1,0 +1,27 @@
+{
+  "name": "exportandprint",
+  "version": "1.0.0",
+  "description": "Nodejs Export and Print Server using Phantomjs",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "phantom": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://samplegitrepo"
+  },
+  "keywords": [
+    "export",
+    "pdf",
+    "phantomjs"
+  ],
+  "author": "Karthik Balu",
+  "license": "ISC"
+}
