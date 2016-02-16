@@ -16,12 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://samplegitrepo"
+    "url": "https://github.com/clofus/nodeexportprint.git"
   },
   "keywords": [
     "export",
     "pdf",
-    "phantomjs"
+    "phantomjs",
+    "handlebar",
+    "express",
+    "export server"
   ],
   "author": "Karthik Balu",
   "license": "ISC"
