@@ -36,11 +36,12 @@ var generateDoc = function(template, data, options, callback) {
         return "Export_" + s4() + s4() + s4() + ext;
     };
 
+    data.baseurl = "file://"+__dirname;
     hbs.engine(templatesDir + "/" + template + ".html", data, function(err, html) {
         if (err) {
             throw err;
         }
-        //console.log(html);
+        console.log(html);
 
 
         var expectedLocation = 'http://www.clofus.com/';
@@ -62,19 +63,27 @@ var generateDoc = function(template, data, options, callback) {
 
                         var i=0;
                         var renderPdf = function(success){
-                            var filename = generateFilename(".pdf");
+                            var filename = generateFilename(".png");
                             console.log("file rendered "+i)
-                            page.render(filename, function() {
+                            
+			    
+			    page.render(filename,options.mimetype, function() {
                                 page.close();
                                 page = null;
                                 //phsession.exit();
                                 var filepath = __dirname + "/" + filename;
                                 callback(filepath);
                             });
-                            i++;
-                            /*page.render('google_home.jpeg', {format: 'jpeg', quality: '100'},function () {
-                                ph.exit();
-                            });*/
+                            /*
+                            page.render(filename, {format: 'jpeg', quality: '100'},function () {
+                                page.close();
+                                page = null;
+                                //phsession.exit();
+                                var filepath = __dirname + "/" + filename;
+                                callback(filepath);
+                            });
+			    */
+			    i++;
                         }
 
                         page.onResourceRequested(
