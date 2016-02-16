@@ -13,40 +13,6 @@ app.post('/export.pdf', function(req, res) {
       orientation: "portrait"
   }
 
-  /*var data = {
-    name: "test",
-    printerfriendly: false,
-    url: "http://www.feedhenry.com/wp-content/uploads/2013/12/node.jpg",
-    items: [{
-      sno: 1,
-      name: 'itemA',
-      desc: 'item A description',
-      value: 90
-    }, {
-      sno: 2,
-      name: 'itemB',
-      desc: 'item B description',
-      value: 20
-    }, {
-      sno: 2,
-      name: 'itemB',
-      desc: 'item B description',
-      value: 20
-    }, {
-      sno: 2,
-      name: 'itemB',
-      desc: 'item B description',
-      value: 20
-    }, {
-      sno: 2,
-      name: 'itemB',
-      desc: 'item B description',
-      value: 20
-    }]
-  }*/
-
-  console.log(req.body)
-
   var template = req.body.template;
   data = req.body.data;
 
@@ -57,6 +23,8 @@ app.post('/export.pdf', function(req, res) {
   if(req.body.orientation){
     options.orientation = req.body.options.orientation
   }
+
+  console.log("page export")
 
   exporter.generateDoc(template, data, options, function(filepath) {
     res.setHeader('Content-disposition', 'inline; filename="' + filepath.split("/").pop() + '"');
