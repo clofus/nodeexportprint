@@ -1,5 +1,5 @@
 {
-  "name": "exportandprint",
+  "name": "nodeexportprint",
   "version": "1.0.0",
   "description": "Nodejs Export and Print Server using Phantomjs",
   "main": "server.js",
