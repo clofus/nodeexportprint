@@ -5,16 +5,19 @@
 	<title>{{name}}</title>
 <!-- 	 Latest compiled and minified CSS  -->
 
+{{baseurl}}
+
 {{#if printerfriendly}}
  <link rel="stylesheet" type="text/css" media="all" 
- href="file:///Users/karthikbalu/DEVELOPMENT/PROTOTYPES/nodephantomjs/templates/bootstrap/css/bootstrap-printer.css">
+ href="{{baseurl}}/templates/bootstrap/css/bootstrap-printer.css">
 {{else}}
  <link rel="stylesheet" type="text/css" media="all" 
- href="file:///Users/karthikbalu/DEVELOPMENT/PROTOTYPES/nodephantomjs/templates/bootstrap/css/bootstrap.css">
+ href="{{baseurl}}/templates/bootstrap/css/bootstrap.css">
 {{/if}}
 
 	<style>
 		body{
+			background-color:#fff;
   			color: #999;
   			font-size: 20px;
 		}
